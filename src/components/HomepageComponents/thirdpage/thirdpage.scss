@@ -1,0 +1,150 @@
+.home_thirdpage {
+  height: 110vh;
+  width: 100%;
+  padding-top: 10rem;
+  margin-top: 5rem;
+  .home_thirdpage_wrapper {
+    width: 1100px;
+    margin: 0 auto;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .thirdpage_left {
+      width: 15%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .left_content {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+          font-size: 3.9rem;
+          text-align: center;
+        }
+      }
+    }
+    .thirdpage_right {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: powderblue;
+      position: relative;
+      //   button
+      #prev_btn,
+      #next_btn {
+        border: none;
+        background-color: black;
+        cursor: pointer;
+        color: white !important;
+        font-size: 3rem;
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bolder;
+        transition: transform 500ms;
+        transition: all 300ms linear;
+        &:hover {
+          background-color: grey;
+          color: black !important;
+        }
+      }
+      #prev_btn {
+        left: 2rem;
+      }
+      #next_btn {
+        right: 2rem;
+      }
+      // book
+      .book {
+        position: relative;
+        width: 350px;
+        height: 450px;
+        transition: transform 500ms;
+        transform: translateX(50%);
+        // paper stacking
+        #p1 {
+          z-index: 3;
+        }
+        #p2 {
+          z-index: 2;
+        }
+        #p3 {
+          z-index: 1;
+        }
+        .flipped .front,
+        .flipped .back {
+          transform: rotateY(-180deg);
+        }
+        .paper {
+          //   border: 1px solid red;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          perspective: 1500px;
+          .front,
+          .back {
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform-origin: left;
+            transition: all 300ms linear;
+            h1 {
+              font-size: 3rem;
+            }
+            .front-content,
+            .back-content {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 3rem;
+              // align-items: center;
+              .back_content_text ,
+              .front-content-text{
+                display: flex;
+                align-items: center;
+                margin-top: 1rem;
+                justify-content: space-evenly;
+                h1 {
+                  font-size: 3.4rem;
+                  text-transform: capitalize;
+                }
+                span {
+                  font-size: 5rem;
+                }
+              }
+            }
+          }
+          .front {
+            z-index: 1;
+            border-left: 2px solid black;
+            backface-visibility: hidden;
+          }
+          .back {
+            z-index: 0;
+            .back-content {
+              transform: rotateY(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

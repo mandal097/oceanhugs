@@ -1,0 +1,28 @@
+.home_fourthpage {
+  width: 100%;
+  height: auto;
+  transition: all 1000ms linear;
+  .home_fourthpage_wrapper {
+    width: 1100px;
+    height: auto;
+    margin: 5rem auto;
+    .cards_container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .home_fourthpage {
+    width: 100%;
+    height: auto;
+    .home_fourthpage_wrapper {
+      width: 95%;
+    }
+  }
+}
