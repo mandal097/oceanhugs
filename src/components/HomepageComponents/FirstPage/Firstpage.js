@@ -35,13 +35,13 @@ const Firstpage = () => {
                 <div className="home_firstpage_wrapper">
                     <div className="first_top">
                         <div className={d === true ? 'top' : 'top'}>
-                            <div className="video">
+                            <div className="video" id='ha'>
                                 <video className={d === true ? 'scrolled react-player' : 'react-player'} autoPlay
                                     // muted={mute === true ? false : true}
                                     muted
                                     controls
                                     loop >
-                                    <source src='videos/player.mp4' />
+                                    <source src='videos/player.mp4'  />
                                 </video>
                                 {/* <ReactPlayer
                                             url={url}
@@ -58,10 +58,10 @@ const Firstpage = () => {
                                 <div className='animated_div'>
                                     {/* <div className={d === true ? 'animated_div' : 'hide_animated_div'}> */}
                                     <div className="trip_types" >
-                                        <div data-aos="fade-up-right" data-aos-delay="1000">
+                                        <div data-aos="fade-up-right" data-aos-delay="500">
                                             <p>private trips custom designed for you</p>
                                         </div>
-                                        <div className='right' data-aos="fade-up-left" data-aos-delay="1000">
+                                        <div className='right' data-aos="fade-up-left" data-aos-delay="500">
                                             <p>+91 9890699991</p>
                                             <p>a@oceanhugs.com</p>
                                             <p>Start planning Your Next Trip</p>
@@ -79,7 +79,7 @@ const Firstpage = () => {
                             className="scrollText"
                             href="/"
                             onClick={e => {
-                                let thirdPage = document.getElementById("thirdPage");
+                                let thirdPage = document.getElementById("ha");
                                 e.preventDefault();  // Stop Page Reloading
                                 thirdPage && thirdPage.scrollIntoView({ behavior: "smooth", block: "start" })
                             }}
