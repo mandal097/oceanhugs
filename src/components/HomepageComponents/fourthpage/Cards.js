@@ -1,6 +1,9 @@
 import React from 'react'
 import './cards.scss'
-const Cards = ({ cardImg, triptype, buttontext, fun , demo}) => {
+const Cards = ({ cardImg, triptype, buttontext, fun }) => {
+  const handleClick =() =>{
+    fun()
+  }
   return (
     <div className="card">
       <div className="card_img">
@@ -8,10 +11,7 @@ const Cards = ({ cardImg, triptype, buttontext, fun , demo}) => {
       </div>
       <div className="card_content">
         <div className="card_content_title">{triptype}</div>
-        <button onClick={() => {
-          fun();
-          demo();
-        }}>{buttontext}</button>
+        <button onClick={handleClick}>{buttontext}</button>
       </div>
     </div>
   )

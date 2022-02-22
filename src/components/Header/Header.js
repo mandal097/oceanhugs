@@ -61,7 +61,7 @@ const Header = (props) => {
 
     }, [])
     return (
-        <Container b={bg} className="menu" id="menu">
+        <Container b={bg} className="menu" id="menu" >
             {showMob && <div className="mob_number">+91 9890699991</div>}
             <div className="menu_wrapper">
                 <div className="left">

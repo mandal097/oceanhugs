@@ -1,6 +1,7 @@
 .third_card_view {
     width: 100%;
     height: auto;
+    animation: cardsView 1500ms ease-in-out;
     .third_card_view_wrapper {
       width: 1100px;
       height: auto;

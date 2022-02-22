@@ -17,6 +17,21 @@
   }
 }
 
+.remaining_card{
+  width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cards{
+    width: auto;
+    height: 100%;
+
+  }
+}
+
 @media (max-width: 1100px) {
   .home_fourthpage {
     width: 100%;
