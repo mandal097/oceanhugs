@@ -23,7 +23,7 @@ const SecondPage = () => {
             <div className="home_secondpage_wrapper">
                 <div className="main">
                     <div className="oceanhug"
-                    // style={{ transform: `translateY(${translate})` }}
+                    style={{ transform: `translateY(${translate})` }}
                     >
                         <h1>ocean hugs</h1>
                     </div>

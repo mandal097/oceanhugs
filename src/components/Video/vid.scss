@@ -1,0 +1,14 @@
+.full_video {
+//   position: absolute;
+//   bottom: -10rem;
+//   left: 0;
+  height: 100vh;
+  width: 100%;
+//   z-index: 2;
+  margin: 10rem 0;
+  .full_vid_ {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

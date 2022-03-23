@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Header/Header'
 import './firstpage.scss'
-// import ReactPlayer from 'react-player'
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 
 const Firstpage = () => {
 
-    const [d, setD] = useState(false)
-    const [mute, setMute] = useState(false)
+    const [d, setD] = useState(false);
 
     useEffect(() => {
         Aos.init({ duration: 3000 });
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 60) {
+            if (window.scrollY > 50) {
                 setD(true)
-                    setMute(true)
+                // document.body.style.overflow = "scroll"
+            }
+            else if (window.scrollY === 0) {
+                // document.body.style.overflow = 'hidden'
             }
             else {
                 setD(false)
-                setMute(false)
             }
             return () => {
                 window.removeEventListener("scroll")
@@ -33,30 +33,18 @@ const Firstpage = () => {
             <Header />
             <div className='home_firstpage' id='firstpage'>
                 <div className="home_firstpage_wrapper">
-                    <div className="first_top">
+                    <div className="first_top" id='ha'>
                         <div className={d === true ? 'top' : 'top'}>
-                            <div className="video" id='ha'>
+                            <div className="video">
                                 <video className={d === true ? 'scrolled react-player' : 'react-player'} autoPlay
-                                    // muted={mute === true ? false : true}
                                     muted
                                     controls
                                     loop >
-                                    <source src='videos/player.mp4'  />
+                                    <source src='videos/player.mp4' />
                                 </video>
-                                {/* <ReactPlayer
-                                            url={url}
-                                            // url='videos/player.mp4'
-                                            className={d === true ? 'scrolled react-player' : 'react-player'}
-                                            width='100%'
-                                            height='100%'
-                                            playing={true}
-                                            // muted={d === true ? false : true}
-                                            controls={true}
-                                        /> */}
-                                <span id='oceanhug' className={d === true ? 'fadeUP' : ''}>ocean <br /> hugs</span>
-
+                                <span id='oceanhug' className={d === true ? 'fadeUP' : ''}>ocean hugs</span>
+                                {/* <div className={d === true ? 'animated_div' : 'hide_animated_div'}> */}
                                 <div className='animated_div'>
-                                    {/* <div className={d === true ? 'animated_div' : 'hide_animated_div'}> */}
                                     <div className="trip_types" >
                                         <div data-aos="fade-up-right" data-aos-delay="500">
                                             <p>private trips custom designed for you</p>
@@ -75,15 +63,22 @@ const Firstpage = () => {
                         </div>
                     </div>
                     <div className={d === true ? 'hide' : 'scroll_down'}>
-                        <a
+                        <span
                             className="scrollText"
                             href="/"
                             onClick={e => {
-                                let thirdPage = document.getElementById("ha");
-                                e.preventDefault();  // Stop Page Reloading
-                                thirdPage && thirdPage.scrollIntoView({ behavior: "smooth", block: "start" })
+                                // let thirdPage = document.getElementById("thirdPage");
+                                // e.preventDefault();  // Stop Page Reloading
+                                // thirdPage && thirdPage.scrollIntoView({ behavior: "smooth", block: "start" })
+                                window.scroll({
+                                    top: '120',
+                                    behavior: 'smooth'
+                                })
+
                             }}
-                        >Scroll Down</a>
+                        >
+                            {/* Scroll Down */}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -91,10 +86,4 @@ const Firstpage = () => {
     )
 }
 
-export default Firstpage
-{/* <div className={d === true ? 'fadeUp' : 'top_circle'} >
-                                        <div className={d === true ? 'fadeUP top_circle_img_div' : 'top_circle_img_div'} >
-
-                                        </div>
-                                        <div className={d === true ? 'fadeUPText' : 'top_circle_text'}>Trips Of Joy</div>
-                                    </div> */}
+export default Firstpage;

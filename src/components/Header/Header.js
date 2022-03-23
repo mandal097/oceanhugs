@@ -65,8 +65,8 @@ const Header = (props) => {
             {showMob && <div className="mob_number">+91 9890699991</div>}
             <div className="menu_wrapper">
                 <div className="left">
-                    <span onClick={showMobile}>call us!</span>
-                    <span onClick={handleQueryModal}>Send Enquiry </span>
+                    {/* <span onClick={showMobile}>call us!</span>
+                    <span onClick={handleQueryModal}>Send Enquiry </span> */}
                 </div>
                 <div className="right" onClick={handleNav}>
                     {/* <img src="images/menu.jpeg" alt="" /> */}
